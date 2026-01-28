@@ -23,42 +23,12 @@ The focus is on strengthening basic programming concepts, functions, recursion, 
 
 ### 🔹 Iterative Approach
 
-```python
-def fib_s(n):
-    if n <= 0:
-        return
-    else:
-        a, b = 0, 1
-        count = 0
-        while count < 5:
-            print(a, end=' ')
-            a, b = b, a + b
-            count += 1
-
-num = int(input("Enter a number: "))
-fib_s(num)
-```
-
 **Concepts Used:**
 - Functions
 - While loop
 - Conditional statements
 
 ### 🔹 Recursive Approach
-
-```python
-def fib_sr(n, a=0, b=1, c=0):
-    if c == n:
-        return
-    print(a, end=' ')
-    fib_sr(n, b, a + b, c + 1)
-
-num = int(input("Enter a number: "))
-if num > 0:
-    fib_sr(num)
-else:
-    print("Enter a positive number")
-```
 
 **Concepts Used:**
 - Recursion
@@ -76,35 +46,6 @@ else:
   - Works with multi-line text files
 
 ### 🔹 Using split(" ") and join()
-
-```python
-def replace(a):
-    b = a.split(" ")
-    c = "-".join(b)
-    return c
-
-string = input("Enter a string: ")
-print(replace(string))
-```
-
-> ⚠️ **Note:** This may create multiple hyphens if there are extra spaces.
-
-### ✅ Improved Version (Recommended)
-
-```python
-def replace2(a):
-    parts = a.split()
-    return "-".join(parts)
-
-filename = "test_input.txt"
-
-with open(filename, 'r') as file:
-    content = file.read()
-
-result = replace2(content)
-print("Processed text:")
-print(result)
-```
 
 **Why this works better:**
 - `split()` handles:
@@ -132,33 +73,11 @@ this is line 2.
   - Lowercase → Uppercase
 
 ### 🔹 Manual Implementation
-
-```python
-def swap(n):
-    result = ""
-    for char in n:
-        if char.isupper():
-            result += char.lower()
-        elif char.islower():
-            result += char.upper()
-        else:
-            result += char
-    return result
-
-inp = input("Enter a string: ")
-print(swap(inp))
-```
-
 **Concepts Used:**
 - String traversal
 - Character methods (`isupper()`, `islower()`)
 
 ### 🔹 Built-in Method (Simpler)
-
-```python
-a = input("Enter the input: ")
-print(a.swapcase())
-```
 
 ✅ **Preferred** for clean and efficient code.
 
