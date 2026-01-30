@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.sqlite3
+db.sqlite3
+/staticfiles/
+/media/
+
+# Env files
+.env
+.env.*
+
+# Pyenv
+.python-version
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# IDE
+.idea/
+
+# Reset/admin scripts
+reset_admin.py
+
+# Ignore compiled assets
+*.min.js
+*.map
