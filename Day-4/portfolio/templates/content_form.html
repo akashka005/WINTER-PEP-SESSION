@@ -1,0 +1,55 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}{% if action == 'Add' %}Add{% else %}Edit{% endif %} Content - Portfolio Admin{% endblock %}
+{% block page_title %}{% if action == 'Add' %}Add{% else %}Edit{% endif %} Portfolio Content{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label for="id_content_type" class="form-label">Content Type</label>
+                {{ form.content_type }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_title" class="form-label">Title</label>
+                {{ form.title }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Description</label>
+                {{ form.description }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_additional_data" class="form-label">Additional Data (JSON)</label>
+                {{ form.additional_data }}
+                <small class="text-muted">Optional: Add extra data as JSON</small>
+            </div>
+
+            <div class="mb-3 form-check">
+                {{ form.is_active }}
+                <label class="form-check-label" for="id_is_active">
+                    Active
+                </label>
+            </div>
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+                <a href="{% url 'core:edit_content' %}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    {% if action == 'Add' %}Create{% else %}Update{% endif %} Content
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    #id_content_type, #id_title, #id_description, #id_additional_data {
+        width: 100%;
+    }
+</style>
+{% endblock %}

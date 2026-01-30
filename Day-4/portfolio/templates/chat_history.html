@@ -1,0 +1,28 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Chat History - Portfolio Admin{% endblock %}
+{% block page_title %}Chat History{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title mb-4">Chatbot Conversations</h5>
+        
+        {% if sessions %}
+        <div class="list-group">
+            {% for session in sessions %}
+            <a href="{% url 'core:chat_session' session.session_id %}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">Session: <code>{{ session.session_id }}</code></h6>
+                    <small class="text-muted">View conversation →</small>
+                </div>
+                <p class="mb-1 text-muted">Click to view all messages in this session</p>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="alert alert-info">No chat conversations yet</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

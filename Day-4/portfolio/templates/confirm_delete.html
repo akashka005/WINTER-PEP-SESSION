@@ -1,0 +1,28 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Delete - Portfolio Admin{% endblock %}
+{% block page_title %}Confirm Delete{% endblock %}
+
+{% block content %}
+<div class="card border-danger">
+    <div class="card-body">
+        <h5 class="card-title text-danger">Delete Content Item</h5>
+        <p class="card-text">Are you sure you want to delete this item?</p>
+        
+        <div class="alert alert-light border">
+            <strong>{{ content.title }}</strong>
+            <p class="text-muted mb-0">Type: {{ content.get_content_type_display }}</p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+                <a href="{% url 'core:edit_content' %}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Delete Permanently
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

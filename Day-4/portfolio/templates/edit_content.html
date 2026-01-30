@@ -1,0 +1,56 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Edit Content - Portfolio Admin{% endblock %}
+{% block page_title %}Edit Portfolio Content{% endblock %}
+
+{% block content %}
+<div class="mb-3">
+    <a href="{% url 'core:add_content' %}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Add New Content
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Last Updated</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for content in contents %}
+            <tr>
+                <td>{{ content.title }}</td>
+                <td>
+                    <span class="badge bg-info">{{ content.get_content_type_display }}</span>
+                </td>
+                <td>{{ content.updated_at|date:"M d, Y" }}</td>
+                <td>
+                    {% if content.is_active %}
+                        <span class="badge bg-success">Active</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Inactive</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'core:update_content' content.id %}" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a href="{% url 'core:delete_content' content.id %}" class="btn btn-sm btn-outline-danger">
+                        <i class="fas fa-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center text-muted py-4">No content items yet. Create one!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

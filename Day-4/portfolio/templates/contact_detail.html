@@ -1,0 +1,51 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}{{ contact.subject }} - Portfolio Admin{% endblock %}
+{% block page_title %}Contact Message Detail{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-light">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h5 class="mb-0">{{ contact.subject }}</h5>
+            </div>
+            <div class="col-md-4 text-end">
+                {% if contact.is_read %}
+                    <span class="badge bg-success">Read</span>
+                {% else %}
+                    <span class="badge bg-warning">Unread</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <p><strong>Name:</strong> {{ contact.name }}</p>
+                <p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                <p><strong>Phone:</strong> {{ contact.phone|default:"N/A" }}</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <p><strong>Received:</strong> {{ contact.created_at|date:"M d, Y H:i" }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h6 class="mb-3"><strong>Message:</strong></h6>
+        <div class="bg-light p-3 rounded">
+            {{ contact.message|linebreaks }}
+        </div>
+
+        <div class="mt-4">
+            <a href="mailto:{{ contact.email }}" class="btn btn-primary">
+                <i class="fas fa-reply"></i> Reply
+            </a>
+            <a href="{% url 'core:contact_messages' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,424 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash - AI/ML Engineer Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span class="logo-accent">Akash</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    {% if user.is_authenticated and user.is_superuser %}
+                    <li><a href="{% url 'admin:index' %}" class="nav-link btn-outline">Admin</a></li>
+                    {% endif %}
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Transforming Ideas into <span class="gradient-text">Intelligent Solutions</span>
+                    </h1>
+                    <p class="hero-subtitle">AI/ML Engineer | Full Stack Developer | Data Scientist</p>
+                    <p class="hero-description">
+                        Building cutting-edge machine learning models and web applications that solve real-world problems
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h3>12+</h3>
+                            <p>Technologies</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Dedicated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know who I am</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate CSE student specializing in AI/ML with a strong foundation in full-stack web development. 
+                        I love solving complex problems using machine learning and creating seamless user experiences with modern web technologies.
+                    </p>
+                    <p>
+                        My journey in tech has been marked by continuous learning, hands-on project experience, and a commitment to 
+                        building solutions that make a real impact. I'm proficient in multiple programming languages and frameworks, 
+                        with expertise in deep learning, data analysis, and web development.
+                    </p>
+                    <div class="about-highlight">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Passionate about AI/ML innovation and elegant code</span>
+                    </div>
+                </div>
+                <div class="about-metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>15+</h4>
+                        <p>Programming Languages & Tools</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>5+</h4>
+                        <p>Major Projects</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>ML</h4>
+                        <p>Specialized in AI/Deep Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Tools and technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i> Languages
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-globe"></i> Web Development
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-brain"></i> AI/ML
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">CNN</span>
+                        <span class="skill-tag">Deep Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-chart-bar"></i> Data Science
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i> Tools
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Selenium</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i> Databases
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my best work</p>
+            </div>
+
+            <h3 class="projects-subheading">Completed Projects</h3>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-badge">Completed</div>
+                    <div class="project-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Credit Card Fraud Detection</h3>
+                    <p>Advanced machine learning model using classification algorithms to detect fraudulent transactions with high accuracy. Implemented comprehensive data preprocessing and feature engineering.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>ML</span>
+                        <span>Pandas</span>
+                        <span>Scikit-Learn</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Completed</div>
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Quant Analyzer</h3>
+                    <p>Sophisticated financial data analysis tool for portfolio optimization and market analysis. Features include real-time data visualization, statistical analysis, and predictive modeling.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>Seaborn</span>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Completed</div>
+                    <div class="project-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>AI Resume Analyzer</h3>
+                    <p>Intelligent resume evaluation system using NLP to provide actionable feedback. Analyzes skill gaps, formatting, and ATS compatibility with detailed recommendations.</p>
+                    <div class="project-tech">
+                        <span>Django</span>
+                        <span>NLP</span>
+                        <span>Python</span>
+                        <span>React</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="projects-subheading" style="margin-top: 4rem;">In Progress</h3>
+            <div class="projects-container">
+                <div class="project-card ongoing">
+                    <div class="project-badge ongoing-badge">In Progress</div>
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Brain Tumor Detection</h3>
+                    <p>Deep learning system using CNN for automated brain tumor detection from MRI scans. Focus on medical imaging, achieving high accuracy with explainable AI.</p>
+                    <div class="project-tech">
+                        <span>TensorFlow</span>
+                        <span>CNN</span>
+                        <span>Deep Learning</span>
+                        <span>Medical AI</span>
+                    </div>
+                </div>
+
+                <div class="project-card ongoing">
+                    <div class="project-badge ongoing-badge">In Progress</div>
+                    <div class="project-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Neural Style Transfer</h3>
+                    <p>Advanced CNN application that applies artistic styles to images. Transforms cat images with Van Gogh's Starry Night style - merging creativity with deep learning.</p>
+                    <div class="project-tech">
+                        <span>PyTorch</span>
+                        <span>CNN</span>
+                        <span>Style Transfer</span>
+                        <span>Web Interface</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chat" class="chat">
+        <div class="container">
+            <div class="chat-wrapper">
+                <div class="chat-info">
+                    <h2>Have Questions?</h2>
+                    <p>Chat with my AI assistant to learn more about my projects, skills, and experience.</p>
+                    <ul class="chat-highlights">
+                        <li><i class="fas fa-check"></i> Instant Responses</li>
+                        <li><i class="fas fa-check"></i> 24/7 Available</li>
+                        <li><i class="fas fa-check"></i> Smart Conversations</li>
+                    </ul>
+                </div>
+                <div class="chatbot-container">
+                    <div class="chat-header">
+                        <h3>Chat Assistant <span class="online-indicator"></span></h3>
+                    </div>
+                    <div class="chat-box" id="chatBox">
+                        <div class="chat-message bot-message">
+                            <p>👋 Hi there! Ask me anything about my skills, projects, or experience!</p>
+                        </div>
+                    </div>
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="chatInput" placeholder="Type your question..." class="chat-input">
+                        <button id="sendBtn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">I'm always interested in hearing about new projects</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <h3>Send me a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="+91 9600205581" optional>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <div class="contact-info-container">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:akashka688@gmail.com">akashka688@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919600205581">+91 9600205581</a></p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Social Links</h3>
+                    <div class="social-grid">
+                        <a href="https://github.com/akashka005" class="social-card" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/akashka005" class="social-card" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://leetcode.com/akashka005" class="social-card" target="_blank">
+                            <i class="fas fa-code"></i>
+                            <span>LeetCode</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Akash. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart"></i> using Django & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script-prod.js' %}"></script>
+    <script src="{% static 'js/chatbot-prod.js' %}"></script>
+    <script src="{% static 'js/contact-form-prod.js' %}"></script>
+</body>
+</html>
