@@ -1,0 +1,11 @@
+<h2>{{ object.title }}</h2>
+<a href="{% url 'task-create' object.pk %}">Add Task</a>
+
+<ul>
+  {% for task in object.tasks.all %}
+    <li>
+      {% if task.completed %}{% else %}<span style="color: red;">Incomplete</span>{% endif %}
+      {{ task.title }}
+    </li>
+  {% endfor %}
+</ul>
